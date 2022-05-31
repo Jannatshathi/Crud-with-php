@@ -34,8 +34,21 @@ include 'connect.php';?>
                     $sql="Select * from `crud`";
                     $result=mysqli_query($con,$sql);
                     if($result){
-                        $row=mysqli_fetch_assoc($result);
-                        echo $row['name'];
+                        while($row=mysqli_fetch_assoc($result)){
+                            $id=$row['id'];
+                            $name=$row['name'];
+                            $email=$row['email'];
+                            $mobile=$row['mobile'];
+                            $password=$row['password'];
+                            echo ' <tr>
+                                <th scope="row">'.$id.'</th>
+                                <td>'.$name.'</td>
+                                <td>'.$email.'</td>
+                                <td>'.$mobile.'</td>
+                                <td>'.$password.'</td>
+                                </tr>';
+
+                        }
                     }
 
                     ?>
