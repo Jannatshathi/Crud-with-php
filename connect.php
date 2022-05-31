@@ -1,9 +1,7 @@
 <?php
 
 $con=new mysqli('localhost', 'root', '', 'crud with php');
-if($con){
-    echo "Connection successfull";
-}
-else{
+if(!$con){
     die(mysqli_error($con));
+    
 }
